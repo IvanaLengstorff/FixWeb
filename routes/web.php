@@ -34,30 +34,6 @@ Auth::routes();
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::resource('brands', BrandsController::class);
-    Route::resource('workPositions', WorkPositionController::class);
-    Route::resource('paymentMethods', PaymentMethodController::class);
+    Route::get('employees', [EmployeeController::class, 'index'])->name('employees.index');
     Route::resource('users', UserController::class);
-    Route::resource('employees', EmployeeController::class);
-    Route::resource('branches', BranchController::class);
-    Route::resource('categories', CategoryController::class);
-    Route::resource('subcategories', SubcategoryController::class);
-    Route::resource('products', ProductController::class);
-    Route::group(['prefix' => 'purchases'], function () {
-        Route::get('/', [TransactionController::class, 'purchaseIndex'])
-            ->name('purchases.index');
-        Route::get('show', [TransactionController::class, 'purchaseShow'])
-            ->name('purchases.show');
-    });
-
-    Route::group(['prefix' => 'sells'], function () {
-        Route::get('/', [TransactionController::class, 'sellIndex'])
-            ->name('sells.index');
-        Route::get('show', [TransactionController::class, 'sellShow'])
-            ->name('sells.show');
-    });
-
-    Route::get('bitacoras', [BitacoraController::class, 'index'])->name('bitacora.index');
 });
-
-Route::get('catalogos', [ProductController::class, 'catalogo'])->name('catalogo.index');

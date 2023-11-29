@@ -255,37 +255,6 @@ return [
         ],
         
         [
-            'text' => 'Marcas',
-            'url'  => 'brands',
-            'icon' => 'fas fa-fw fa-users',
-            'can' => 'cruds',
-        ],
-        
-        [
-            'text' => 'Metodos de Pago',
-            'url'  => 'paymentMethods',
-            'icon' => 'fas fa-fw fa-users',
-            'can' => 'cruds',
-        ],
-        [
-            'text' => 'Categorias',
-            'url'  => 'categories',
-            'icon' => 'fas fa-fw fa-users',
-            'can' => 'cruds',
-        ],
-        [
-            'text' => 'SubCategorias',
-            'url'  => 'subcategories',
-            'icon' => 'fas fa-fw fa-users',
-            'can' => 'cruds',
-        ],
-        [
-            'text' => 'Productos',
-            'url'  => 'products',
-            'icon' => 'fas fa-fw fa-users',
-            'can' => 'cruds',
-        ],
-        [
             'text'    => 'Gestion de negocio',
             'icon'    => 'fas fa-fw fa-share',
             'can' => 'cruds',
@@ -296,50 +265,7 @@ return [
                     'icon' => 'fas fa-fw fa-users',
                     'can' => 'cruds',
                 ],
-                [
-                    'text' => 'Cargos',
-                    'url'  => 'workPositions',
-                    'icon' => 'fas fa-fw fa-users',
-                    'can' => 'cruds',
-                ],
-                [
-                    'text' => 'Sucursales',
-                    'url'  => 'branches',
-                    'icon' => 'fas fa-fw fa-users',
-                    'can' => 'cruds',
-                ],
             ],
-        ],
-        [
-            'text'    => 'Transacciones',
-            'icon'    => 'fas fa-fw fa-share',
-            'can' => 'venta',
-            'submenu' => [
-                [
-                    'text' => 'Ventas',
-                    'url'  => 'sells',
-                    'icon' => 'fas fa-fw fa-users',
-                    'can' => 'cruds',
-                ],
-                [
-                    'text' => 'Compras',
-                    'url'  => 'purchases',
-                    'icon' => 'fas fa-fw fa-users',
-                    'can' => 'cruds',
-                ],
-            ],
-        ],
-        [
-            'text' => 'Bitacora',
-            'url'  => 'bitacoras',
-            'icon' => 'fas fa-fw fa-users',
-            'can' => 'cruds',
-        ],
-        [
-            'text' => 'Catalogo',
-            'url'  => 'catalogos',
-            'icon' => 'fas fa-fw fa-users',
-            'can' => 'cliente',
         ],
     ],
 
