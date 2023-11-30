@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>ShopStyle</b>',
+    'logo' => '<b>FixWeb</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -231,10 +231,6 @@ return [
             'text'         => 'search',
             'topnav_right' => true,
         ],
-        [
-            'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
 
         // Sidebar items:
         [
@@ -242,28 +238,77 @@ return [
             'text' => 'search',
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Perfil',
+            // 'route'  => 'profile',
+            'can'  => 'profile',
         ],
-        ['header' => 'GESTION'],
+        ['header' => 'Menu'],
+
         [
             'text' => 'Usuarios',
             'url'  => 'users',
             'icon' => 'fas fa-fw fa-users',
-            'can' => 'cruds',
+            'can' => 'admin.users',
+        ],
+
+        [
+            'text' => 'Solicitar Servicio',
+            'route'  => 'requests.client',
+            'icon' => 'fas fa-exclamation-triangle',
+            'can' => 'client.requests',
+        ],
+
+        
+        [
+            'text' => 'Empezar Jornada',
+            'route'  => 'requests.mechanical',
+            'icon' => 'fas fa-walking',
+            'can' => 'mechanical.requests',
+        ],
+
+        [
+            'text'    => 'Gestion',
+            'icon'    => 'fas fa-fw fa-share',
+            'can' => 'client',
+            'submenu' => [
+                [
+                    'text' => 'Mis Vehiculos',
+                    'route'  => 'vehicles.client',
+                    'icon' => 'fas fa-taxi',
+                    'can' => 'client.vehicles',
+                ],
+                [
+                    'text' => 'Historial de Solicitudes',
+                    'route'  => 'requests.client',
+                    'icon' => 'fas fa-file-alt',
+                    'can' => 'client.completed_requests',
+                ],
+            ],
         ],
         
         [
             'text'    => 'Gestion de negocio',
             'icon'    => 'fas fa-fw fa-share',
-            'can' => 'cruds',
+            'can' => 'mechanical',
             'submenu' => [
                 [
                     'text' => 'Empleados',
-                    'url'  => 'employees',
+                    'route'  => 'employees.index',
                     'icon' => 'fas fa-fw fa-users',
-                    'can' => 'cruds',
+                    'can' => 'mechanical.employees',
+                ],
+                [
+                    'text' => 'Mis Servicios',
+                    'route'  => 'services.mechanical',
+                    'icon' => 'fas fa-wrench',
+                    'can' => 'mechanical.services',
+                ],
+                
+                [
+                    'text' => 'Trabajos Realizados',
+                    'route'  => 'requests.mechanical',
+                    'icon' => 'fas fa-check-circle',
+                    'can' => 'mechanical.completed_requests',
                 ],
             ],
         ],

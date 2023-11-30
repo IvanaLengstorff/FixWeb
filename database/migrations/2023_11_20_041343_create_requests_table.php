@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('longitud');
             $table->string('latitud');
             $table->string('photo')->nullable();
+            $table->boolean('terminated')->default(false);
+            $table->boolean('accepted')->default(false);
 
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');

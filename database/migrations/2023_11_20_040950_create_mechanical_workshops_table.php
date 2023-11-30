@@ -18,8 +18,8 @@ return new class extends Migration
             $table->text('address')->nullable()->default(null);
             $table->string('longitud')->nullable();
             $table->string('latitud')->nullable();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

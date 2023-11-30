@@ -3,40 +3,30 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Client;
-use App\Providers\RouteServiceProvider;
+use App\Models\MechanicalWorkshop;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 
-class RegisterController extends Controller
+class RegisterMechanicalController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
     protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
-     * Create a new controller instance.
+     * Show the client registration form.
      *
-     * @return void
+     * @return \Illuminate\View\View
      */
+    public function showMechanicalRegistrationForm()
+    {
+        return view('auth.registerMechanical');
+    }
+
     public function __construct()
     {
         $this->middleware('guest');
@@ -58,7 +48,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * Create a new client instance after a valid registration.
      *
      * @param  array  $data
      * @return \App\Models\User
@@ -69,9 +59,9 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ])->assignRole('Client');
+        ])->assignRole('Mechanical');
 
-        Client::create([
+        MechanicalWorkshop::create([
             'name' => $user->name,
             'user_id' => $user->id
         ]);

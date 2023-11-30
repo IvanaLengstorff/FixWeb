@@ -23,6 +23,9 @@ return new class extends Migration
             $table->unsignedBigInteger('mechanical_id');
             $table->foreign('mechanical_id')->references('id')->on('mechanical_workshops')->onDelete('cascade')->onUpdate('cascade');
            
+            $table->string('longitud');
+            $table->string('latitud');
+
             $table->boolean('status')->default(false);
 
             $table->timestamps();

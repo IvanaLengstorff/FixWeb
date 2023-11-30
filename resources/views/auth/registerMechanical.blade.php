@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Register Cliente</title>
+    <title>Register Mechanical</title>
 </head>
 <div class="login"> 
     <div class="login__content">
@@ -18,7 +18,7 @@
         </div>
 
         <div class="login__forms">
-            <form method="POST" action="{{ route('register') }}" class="login__registre" id="login-in">
+            <form method="POST" action="{{ route('register.mechanical.create') }}" class="login__registre" id="login-in">
                     @csrf
                 <h1 class="login__title" style="font-weight: bold">Registrarse</h1>
 

@@ -13,4 +13,14 @@ class Request extends Model
     protected $guarded = [
         'id',
     ];
+
+    public function accepted()
+    {
+        return $this->hasOne(AcceptedRequest::class, 'request_id');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id');
+    }
 }

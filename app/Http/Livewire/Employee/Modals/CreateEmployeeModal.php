@@ -28,6 +28,7 @@ class CreateEmployeeModal extends Component
             'employee.name' => 'required|string|max:255',
             'employee.phone' => 'required|string|max:255',
         ]);
+        $this->employee['mechanical_id'] = Auth()->user()->mechanical->id;
 
         Employee::create($this->employee);
 

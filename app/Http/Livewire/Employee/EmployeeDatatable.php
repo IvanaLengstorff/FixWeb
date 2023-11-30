@@ -40,7 +40,7 @@ class EmployeeDatatable extends DataTableComponent
 
     public function builder(): Builder
     {
-        return Employee::query();
+        return Employee::query()->where('mechanical_id',Auth()->user()->mechanical->id);
     }
 
     public function edit($employeeId)
