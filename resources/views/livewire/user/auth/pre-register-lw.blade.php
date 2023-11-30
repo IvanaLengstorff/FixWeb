@@ -5,8 +5,7 @@
                 <img src="{{ asset('img/logo.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Usuario</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
+                    <p class="card-text">Puedes registrarte y pedir auxilio en cualquier momento...</p>
                     <button wire:click='registerClient()' class="btn btn-primary">Registrate Aqui</button>
                 </div>
             </div>
@@ -16,8 +15,7 @@
                 <img src="{{ asset('img/logo.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Taller Vehicular</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
+                    <p class="card-text">Brindaras tus servicios de taller mecanico a quienes lo necesiten</p>
                     <button wire:click='registerVehicle()' class="btn btn-primary">Registrate Aqui</button>
                 </div>
             </div>
