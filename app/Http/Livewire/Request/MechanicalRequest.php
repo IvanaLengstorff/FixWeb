@@ -17,8 +17,8 @@ class MechanicalRequest extends Component
     }
 
     public function acceptedRequest($reques_id){
-        AcceptedRequest::create([
-            ''
-        ]);
+        // AcceptedRequest::create([
+        //     ''
+        // ]);
     }
 }
